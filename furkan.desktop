@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=furkan
+Comment=Kuran Dinletici
+Exec=/usr/bin/furkan
+Icon=furkan
+Terminal=false
+Categories=Application;Multimedia;

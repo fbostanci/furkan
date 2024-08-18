@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/furkan.png</file>
+        <file>images/bilgi.png</file>
+        <file>images/dinlet.png</file>
+        <file>images/iptal.png</file>
+        <file>images/duraklat.png</file>
+        <file>images/ileri.png</file>
+        <file>images/geri.png</file>
+    </qresource>
+</RCC>
