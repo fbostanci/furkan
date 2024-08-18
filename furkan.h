@@ -28,6 +28,7 @@ private:
     std::unique_ptr<QNetworkAccessManager> networkManager; // QNetworkAccessManager için unique_ptr
 
     void showError(const QString &message);
+    void setupButton(QPushButton *button, const QString &iconPath, const QSize &iconSize = QSize());
 
     QString sureyiAyarla(qint64);
     void secimYap();
@@ -38,7 +39,6 @@ private slots:
     void checkInternetConnection();
     void onNetworkReplyFinished(QNetworkReply *reply);
     void durumDegisti(QMediaPlayer::MediaStatus);
-    void setupButton(QPushButton *button, const QString &iconPath, const QSize &iconSize = QSize());
     void on_pushButton_di_clicked();
     void on_pushButton_ip_clicked();
     void on_pushButton_pv_clicked();
