@@ -8,3 +8,19 @@ HAKKINDA
 ==
 
 Furkan, 61 tane Kuran okuyucu seçimli çevrimiçi Kuran dinletme uygulamasıdır.
+
+
+KURULUM ve KALDIRMA
+===
+<br>
+
+
+**Ubuntu için Launchpad PPA üzerinden kurulum:**
+
+Depo Ubuntu 24.04 içindir.
+
+`sudo add-apt-repository ppa:fbostanci/distroguide`
+
+`sudo apt update`
+
+`sudo apt install furkan`
