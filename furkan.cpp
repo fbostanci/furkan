@@ -160,23 +160,28 @@ void furkan::on_pushButton_ip_clicked()
 
 void furkan::on_pushButton_pv_clicked()
 {
-    ui->slider_sr->setEnabled(true);
-    int index = ui->comboBox_sr->currentIndex();
-    index--;
-    if(index < 0 ) index = 113;
-    ui->comboBox_sr->setCurrentIndex(index);
-    secimYap();
-    ui->pushButton_ip->setEnabled(true);
-    duraklatD();
-    oynatici->play();
+    sureDegistir(-1);
 }
 
 void furkan::on_pushButton_nx_clicked()
 {
+    sureDegistir(1);
+}
+
+void furkan::sureDegistir(int delta)
+{
+    oynatici->stop();
     ui->slider_sr->setEnabled(true);
+
     int index = ui->comboBox_sr->currentIndex();
-    index++;
-    if(index > 113) index = 0;
+    index += delta;
+
+    if (index < 0) {
+        index = 113;
+    } else if (index > 113) {
+        index = 0;
+    }
+
     ui->comboBox_sr->setCurrentIndex(index);
     secimYap();
     ui->pushButton_ip->setEnabled(true);
@@ -259,7 +264,7 @@ void furkan::secimYap()
         {"Abdur-Rashid Sufi", "abdurrashid_sufi"},
         {"Abdullah Matroud", "abdullah_matroud"},
         {"Akram Al-Alaqmi", "akram_al_alaqmi"},
-        {"Bandar Baleela", "bandar_baleela"},
+        {"Bandar Baleela", "bandar_baleela/complete"},
         {"Fares Abbad", "fares"},
         {"Hani ar-Rifai", "rifai"},
         {"Ibrahim Al-Jibrin", "jibreen"},

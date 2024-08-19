@@ -28,6 +28,7 @@ private:
     std::unique_ptr<QNetworkAccessManager> networkManager; // QNetworkAccessManager için unique_ptr
 
     void showError(const QString &message);
+    void sureDegistir(int);
     void setupButton(QPushButton *button, const QString &iconPath, const QSize &iconSize = QSize());
 
     QString sureyiAyarla(qint64);
