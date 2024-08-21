@@ -65,7 +65,6 @@ furkan::furkan(QWidget *parent)
     // Hakkında düğmesi
     setupButton(ui->pushButton_hk, ":/images/bilgi.png", QSize(16, 16));
 
-
     oynatici->setAudioOutput(audioOutput);
     audioOutput->setVolume(0.8);
     ui->slider_se->setValue(80);
@@ -84,9 +83,6 @@ furkan::furkan(QWidget *parent)
 furkan::~furkan()
 {
     delete ui;
-    delete oynatici;
-    delete audioOutput;
-    delete networkManager;
 }
 
 void furkan::checkInternetConnection()
@@ -196,6 +192,7 @@ void furkan::sureDegistir(int delta)
 void furkan::on_pushButton_di_clicked()
 {
     ui->slider_sr->setEnabled(true);
+
     switch (oynatici->playbackState()) {
     case QMediaPlayer::PlayingState:
         oynatici->pause();
@@ -245,7 +242,6 @@ void furkan::secimYap()
         {"Ali Abdur-Rahman al-Huthaify", "huthayfi"},
         {"AbdulBaset AbdulSamad 1", "abdul_basit_murattal"},
         {"AbdulBaset AbdulSamad 2", "abdulbaset_mujawwad"},
-        {"Abdullah Ali Jabir", "abdullaah_alee_jaabir_studio"},
         {"Abdullah Ali Jabir", "abdullaah_alee_jaabir_studio"},
         {"AbdulKareem Al Hazmi", "abdulkareem_al_hazmi"},
         {"Ahmad al-Huthaify", "ahmad_alhuthayfi"},

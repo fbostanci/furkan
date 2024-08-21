@@ -26,10 +26,10 @@ private:
     QMediaPlayer *oynatici;
     QAudioOutput *audioOutput;
 
-    void sureDegistir(int);
+    QString sureyiAyarla(qint64);
     void setupButton(QPushButton *button, const QString &iconPath, const QSize &iconSize = QSize());
 
-    QString sureyiAyarla(qint64);
+    void sureDegistir(int);
     void secimYap();
     void dinletD();
     void duraklatD();
