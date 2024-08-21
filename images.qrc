@@ -7,5 +7,6 @@
         <file>images/duraklat.png</file>
         <file>images/ileri.png</file>
         <file>images/geri.png</file>
+        <file>images/furkan.ico</file>
     </qresource>
 </RCC>

@@ -26,10 +26,11 @@ set(images_resource_files
     "images/bilgi.png"
     "images/dinlet.png"
     "images/duraklat.png"
+    "images/furkan.ico"
+    "images/furkan.png"
     "images/geri.png"
     "images/ileri.png"
     "images/iptal.png"
-    "images/furkan.png"
 )
 
 qt_add_resources(furkan "images"
