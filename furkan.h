@@ -7,7 +7,6 @@
 #include <QMainWindow>
 #include <QMediaPlayer>
 #include <QAudioOutput>
-#include <memory>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class furkan; }
@@ -18,16 +17,15 @@ class furkan : public QMainWindow
     Q_OBJECT
 
 public:
-    furkan(QWidget *parent = nullptr);
+    explicit furkan(QWidget *parent = nullptr);
     ~furkan();
 
 private:
-    std::unique_ptr<Ui::furkan> ui; // Ui sınıfı için unique_ptr
-    std::unique_ptr<QMediaPlayer> oynatici; // QMediaPlayer için unique_ptr
-    std::unique_ptr<QAudioOutput> audioOutput; // QAudioOutput için unique_ptr
-    std::unique_ptr<QNetworkAccessManager> networkManager; // QNetworkAccessManager için unique_ptr
+    Ui::furkan *ui;
+    QNetworkAccessManager *networkManager;
+    QMediaPlayer *oynatici;
+    QAudioOutput *audioOutput;
 
-    void showError(const QString &message);
     void sureDegistir(int);
     void setupButton(QPushButton *button, const QString &iconPath, const QSize &iconSize = QSize());
 
@@ -39,6 +37,7 @@ private:
 private slots:
     void checkInternetConnection();
     void onNetworkReplyFinished(QNetworkReply *reply);
+    void showError(const QString &message);
     void durumDegisti(QMediaPlayer::MediaStatus);
     void on_pushButton_di_clicked();
     void on_pushButton_ip_clicked();

@@ -38,8 +38,10 @@
 
 furkan::furkan(QWidget *parent)
     : QMainWindow(parent)
-    , ui(std::make_unique<Ui::furkan>())
-    , networkManager(std::make_unique<QNetworkAccessManager>(this))
+    , ui(new Ui::furkan)
+    , networkManager(new QNetworkAccessManager(this))
+    , oynatici(new QMediaPlayer(this))
+    , audioOutput(new QAudioOutput(this))
 {
     ui->setupUi(this);
     this->setWindowTitle("Furkan");
@@ -63,18 +65,17 @@ furkan::furkan(QWidget *parent)
     // Hakkında düğmesi
     setupButton(ui->pushButton_hk, ":/images/bilgi.png", QSize(16, 16));
 
-    oynatici = std::make_unique<QMediaPlayer>(this);
-    audioOutput = std::make_unique<QAudioOutput>(this);
-    oynatici->setAudioOutput(audioOutput.get());
+
+    oynatici->setAudioOutput(audioOutput);
     audioOutput->setVolume(0.8);
     ui->slider_se->setValue(80);
     ui->label_lcd->display(80);
     ui->slider_sr->setEnabled(false);
 
-    connect(oynatici.get(), &QMediaPlayer::positionChanged, this, &furkan::setPosition);
-    connect(oynatici.get(), &QMediaPlayer::durationChanged, this, &furkan::setDuration);
+    connect(oynatici, &QMediaPlayer::positionChanged, this, &furkan::setPosition);
+    connect(oynatici, &QMediaPlayer::durationChanged, this, &furkan::setDuration);
     connect(ui->slider_se, &QSlider::valueChanged, this, [this](int value) { setVolume(value); });
-    connect(oynatici.get(), &QMediaPlayer::mediaStatusChanged, this, &furkan::durumDegisti);
+    connect(oynatici, &QMediaPlayer::mediaStatusChanged, this, &furkan::durumDegisti);
     connect(ui->slider_sr, &QSlider::sliderMoved, this, [this](int value) { oynatici->setPosition(value * 1000); });
 
     checkInternetConnection();
@@ -82,7 +83,10 @@ furkan::furkan(QWidget *parent)
 
 furkan::~furkan()
 {
-
+    delete ui;
+    delete oynatici;
+    delete audioOutput;
+    delete networkManager;
 }
 
 void furkan::checkInternetConnection()
