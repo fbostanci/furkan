@@ -222,6 +222,10 @@ void furkan::durumDegisti(QMediaPlayer::MediaStatus durum)
         dinletD();
         ui->pushButton_ip->setEnabled(false);
         ui->slider_sr->setEnabled(false);
+        if(ui->checkBox_sr->isChecked())
+        {
+            sureDegistir(1);
+        }
     }
 }
 

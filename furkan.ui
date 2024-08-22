@@ -1163,6 +1163,19 @@
      <string/>
     </property>
    </widget>
+   <widget class="QCheckBox" name="checkBox_sr">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>93</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Döngü</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
