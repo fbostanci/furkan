@@ -24,3 +24,7 @@ Depo Ubuntu 24.04 içindir.
 `sudo apt update`
 
 `sudo apt install furkan`
+
+**Windows kurulum:**
+
+Windows sürümü için [tıklayınız.](https://github.com/fbostanci/furkan/releases/latest)
