@@ -943,7 +943,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Sureler</string>
+     <string>Sure</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_di">
